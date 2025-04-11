@@ -28,6 +28,10 @@ def extract_text_from_pdf(file_path):
         text += page.get_text()
     return text
 
+@app.route('/', methods=['GET'])
+def home():
+    return "✅ CV Assistant API is running!"
+
 @app.route('/upload', methods=['POST'])
 def upload_pdf():
     file = request.files.get("file")
